@@ -1,0 +1,66 @@
+//color variables
+$accent-color: #EBAA28;
+$body-background-color: #2E6F84;
+$white: #fff;
+$paragraph-color: #0E141E;
+
+//other variables
+$font: "PT Sans", sans-serif;
+$shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+
+body{
+  font-family: $font;
+  background-color: $body-background-color;
+
+  nav{
+    //padding: 0 5%;
+    //position: fixed;
+
+    ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    li{
+      list-style-type: none;
+    }
+
+    a{
+      text-decoration: none;
+      font-family: $font;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+
+  section{
+    background-color: $white;
+    padding: 10%;
+    margin: 5% 5% 0;
+  }
+
+  h1{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 96px;
+    color: $accent-color;
+    text-shadow: $shadow;
+  }
+
+  p{
+    font-size: 16px;
+    color: $paragraph-color;
+  }
+
+  button{
+    background-color: $accent-color;
+    color: $white;
+    border: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    letter-spacing: 1px;
+    box-shadow: $shadow;
+    padding: 0.3em 1em;
+  }
+}
