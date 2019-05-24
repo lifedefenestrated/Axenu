@@ -1,48 +1,17 @@
-body {
-  font-family: "PT Sans", sans-serif;
-  background-color: #2E6F84; }
-  body nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; }
-  body nav li {
-    list-style-type: none; }
-  body nav a {
-    text-decoration: none;
-    font-family: "PT Sans", sans-serif;
-    color: #fff;
-    text-transform: uppercase; }
-  body section {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 10%;
-    margin: 5% 5% 0; }
-  body div {
-    display: flex; }
-  body h1 {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 96px;
-    color: #EBAA28;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); }
-  body p {
-    font-size: 16px;
-    color: #0E141E; }
-  body button {
-    background-color: #EBAA28;
-    color: #fff;
-    border: none;
-    text-transform: uppercase;
-    font-family: inherit;
-    letter-spacing: 1px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-    padding: 0.3em 1em; }
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import config.sass
+ *   |         ^^^^^^^^^^^
+ *   '
+ *   sass/stylesheet.sass 1:9  root stylesheet */
 
-.flex_row {
-  flex-direction: row; }
-
-.flex_column {
-  flex-direction: column; }
-
-/*# sourceMappingURL=stylesheet.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import config.sass\a   \2502          ^^^^^^^^^^^\a   \2575 \a   sass/stylesheet.sass 1:9  root stylesheet";
+}

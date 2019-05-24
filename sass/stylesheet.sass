@@ -1,0 +1,151 @@
+@import config.sass
+
+body
+  font-family: $font
+  background-color: $body-background-color
+  // background-color: linear-gradient(to bottom, $gradient-start-color, $gradient-end-color)
+  @include linear-gradient($gradient-start-color, $gradient-end-color)
+  // background-image: repeating-linear-gradient(bottom, $gradient-start-color, $gradient-end-color)
+
+  .header_image
+    max-width: 100%
+    margin: auto
+
+
+  nav
+    //padding: 0 5%;
+    //position: fixed;
+    margin-bottom: 30px
+
+    ul
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+
+    li
+      list-style-type: none
+
+    a
+      text-decoration: none
+      font-family: $font
+      color: $white
+      text-transform: uppercase
+
+  .card
+    margin: 0px 10%
+    margin-bottom: 50px
+    background-color: white
+    // display: inline-block
+    @include box-shadow(0px,0px,15px,rgba(0,0,0,0.3),false)
+    border: 0
+    padding: 60px
+    display: flex
+    flex-direction: column
+    // flex-grow: 1
+
+    .card-body
+      // flex-grow: 1
+      // flex-direction: row
+
+    // &.column
+      flex-direction: column
+
+    .item4x4
+      background-color: red
+      height: 100px
+      width: 50%
+      // display: block
+
+    .column
+      flex: auto
+      width: 50%
+      flex-direction: column
+      padding: 10px
+
+      .dividerImage
+        width: 50px
+        align-self: center
+
+
+      &.full-image
+        img
+          width: 90%
+          align-self: center
+          border-radius: 50%
+          @include box-shadow(0px,1px,3px,rgba(0,0,0,0.1),false)
+
+        .image-text
+          color: gray
+          font-style: italic
+          font-size: 0.8em
+          margin-top: 10px
+          align-self: center
+      *
+        margin-top: 20px
+    h3
+      font-size: 3em
+      color: $accent-color
+
+    button
+      background-color: $accent-color
+      color: $white
+      border: none
+      text-transform: uppercase
+      font-family: inherit
+      letter-spacing: 1px
+      @include box-shadow(3px,3px,10px,rgba(0,0,0,0.3),false)
+      padding: 0.3em 1em
+
+    .header-center
+      // align-self: center
+      // display: flex
+      // justify-content: center
+      width: 100%
+
+
+  section
+    display: flex
+    flex-direction: column
+    background-color: $white
+    padding: 10%
+    margin: 5% 5% 0
+
+  div
+    display: flex
+
+  h1
+    font-weight: bold
+    font-style: italic
+    font-size: 96px
+    color: $accent-color
+    text-shadow: $shadow
+
+  p
+    font-size: 16px
+    color: $paragraph-color
+
+.flex_row
+  flex-direction: row
+
+.flex_column
+  flex-direction: column
+
+
+footer
+  // height: 300px
+  padding: 30px
+  // align-items: center
+
+  .row
+    // width: 100%
+    display: flex
+    justify-content: center
+    margin: 30px 0px
+
+  h5
+    color: white
+    font-size: 0.9em
+
+    a
+      color: inherit
+      text-decoration: none
