@@ -74,16 +74,18 @@ body .card {
   display: flex;
   flex-direction: column;
 }
-body .card .item4x4 {
+body .card .card-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body .card .card-body .item4x4 {
   background-color: red;
-  height: 100px;
-  width: 50%;
+  padding: 10px;
 }
 body .card .column {
-  flex: auto;
   width: 50%;
   flex-direction: column;
-  padding: 10px;
 }
 body .card .column .dividerImage {
   width: 50px;
