@@ -1,4 +1,5 @@
 @import config.sass
+@import card.sass
 
 body
   font-family: $font
@@ -31,78 +32,78 @@ body
       color: $white
       text-transform: uppercase
 
-  .card
-    margin: 0px 10%
-    margin-bottom: 50px
-    background-color: white
-    // display: inline-block
-    @include box-shadow(0px,0px,15px,rgba(0,0,0,0.3),false)
-    border: 0
-    padding: 60px
-    display: flex
-    flex-direction: column
-    // flex-grow: 1
-
-    .card-body
-      display: flex
-      // flex-grow: 1
-      flex-direction: row
-      flex-wrap: wrap
-      // padding: 10px
-
-      .item4x4
-        background-color: red
-        padding: 10px
-
-    .column
-      // flex: auto
-      width: 50%
-      flex-direction: column
-      // padding: 10px
-
-      // &.column-vertical
-        flex-direction: row
-
-      .dividerImage
-        width: 50px
-        align-self: center
-
-
-      &.full-image
-        img
-          width: 90%
-          align-self: center
-          border-radius: 50%
-          @include box-shadow(0px,1px,3px,rgba(0,0,0,0.1),false)
-
-        .image-text
-          color: gray
-          font-style: italic
-          font-size: 0.8em
-          margin-top: 10px
-          align-self: center
-      *
-        margin-top: 20px
-    h3
-      font-size: 3em
-      color: $accent-color
-
-    button
-      background-color: $accent-color
-      color: $white
-      border: none
-      text-transform: uppercase
-      font-family: inherit
-      letter-spacing: 1px
-      @include box-shadow(3px,3px,10px,rgba(0,0,0,0.3),false)
-      padding: 0.3em 1em
-
-    .header-center
-      // align-self: center
-      // display: flex
-      // justify-content: center
-      width: 100%
-
+  // .card
+  //   margin: 0px 10%
+  //   margin-bottom: 50px
+  //   background-color: white
+  //   // display: inline-block
+  //   @include box-shadow(0px,0px,15px,rgba(0,0,0,0.3),false)
+  //   border: 0
+  //   padding: 60px
+  //   display: flex
+  //   flex-direction: column
+  //   // flex-grow: 1
+  //
+  //   .card-body
+  //     display: flex
+  //     // flex-grow: 1
+  //     flex-direction: row
+  //     flex-wrap: wrap
+  //     // padding: 10px
+  //
+  //     .item4x4
+  //       background-color: red
+  //       padding: 10px
+  //
+  //   .column
+  //     // flex: auto
+  //     width: 50%
+  //     flex-direction: column
+  //     // padding: 10px
+  //
+  //     // &.column-vertical
+  //       flex-direction: row
+  //
+  //     .dividerImage
+  //       width: 50px
+  //       align-self: center
+  //
+  //
+  //     &.full-image
+  //       img
+  //         width: 90%
+  //         align-self: center
+  //         border-radius: 50%
+  //         @include box-shadow(0px,1px,3px,rgba(0,0,0,0.1),false)
+  //
+  //       .image-text
+  //         color: gray
+  //         font-style: italic
+  //         font-size: 0.8em
+  //         margin-top: 10px
+  //         align-self: center
+  //     *
+  //       margin-top: 20px
+  //   h3
+      // font-size: 3em
+      // color: $accent-color
+  //
+  //   button
+  //     background-color: $accent-color
+  //     color: $white
+  //     border: none
+  //     text-transform: uppercase
+  //     font-family: inherit
+  //     letter-spacing: 1px
+  //     @include box-shadow(3px,3px,10px,rgba(0,0,0,0.3),false)
+  //     padding: 0.3em 1em
+  //
+  //   .header-center
+  //     // align-self: center
+  //     // display: flex
+  //     // justify-content: center
+  //     width: 100%
+  //
 
   section
     display: flex
@@ -125,10 +126,10 @@ body
     font-size: 16px
     color: $paragraph-color
 
-.flex_row
+.flex-row
   flex-direction: row
 
-.flex_column
+.flex-column
   flex-direction: column
 
 
