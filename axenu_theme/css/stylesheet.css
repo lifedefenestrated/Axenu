@@ -82,8 +82,12 @@ table {
   display: flex;
   flex-direction: column;
 }
+.card p {
+  color: #707070;
+}
 .card h3 {
   font-size: 3em;
+  font-weight: bold;
   color: #ebaa28;
 }
 .card h3.center {
@@ -97,14 +101,28 @@ table {
   width: 50%;
   margin: 10px;
 }
-.card .card-body img.round {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: red;
+.card .card-body .card-item {
+  padding: 10px;
 }
-.card .card-body img.divider {
+.card .card-body .card-item.left-text p, .card .card-body .card-item.left-text h4 {
+  text-align: left;
+  margin-left: 20px;
+}
+.card .card-body .card-item.right-text p, .card .card-body .card-item.right-text h4 {
+  text-align: right;
+  margin-right: 20px;
+}
+.card .card-body .img-container {
+  display: grid;
+}
+.card .card-body .img-container img {
+  max-width: 100%;
+}
+.card .card-body .img-container img.round {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.card .card-body .img-container img.divider {
   width: 50px;
   height: auto;
   align-self: center;
@@ -144,9 +162,20 @@ body {
 body .header_image {
   max-width: 100%;
   margin: auto;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 30px;
 }
 body nav {
-  margin-bottom: 30px;
+  z-index: 1;
+  width: 100%;
+  background-image: url("/wp-content/themes/AxenuAB/images/header_image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding: 10px 0px;
+  margin-bottom: 50px;
 }
 body nav ul {
   display: flex;
@@ -155,12 +184,24 @@ body nav ul {
 }
 body nav li {
   list-style-type: none;
+  padding: 20px;
+}
+body nav li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 body nav a {
   text-decoration: none;
   font-family: "PT Sans", sans-serif;
   color: #fff;
   text-transform: uppercase;
+}
+body nav h2 {
+  color: white;
+  font-size: 6em;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px;
 }
 body section {
   display: flex;
@@ -181,7 +222,7 @@ body h1 {
 }
 body p {
   font-size: 16px;
-  color: #0e141e;
+  color: #707070;
 }
 
 .flex-row {

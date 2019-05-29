@@ -11,10 +11,10 @@
   <body>
     <!-- <h1><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1> -->
 
-    <img class="header_image" alt="Axenu header image" src="<?php echo get_bloginfo('template_directory'); ?>/images/header_image.jpg"/>
-
     <nav>
       <ul>
         <?php wp_list_pages( '&title_li=' ); ?>
       </ul>
+      <h2>About Axenu</h2>
     </nav>
+    <!-- <img class="header_image" alt="Axenu header image" src="<?php echo get_bloginfo('template_directory'); ?>/images/header_image.jpg"/> -->

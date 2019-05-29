@@ -11,9 +11,13 @@
   display: flex
   flex-direction: column
 
+  p
+    color: $paragraph-color
+
 
   h3
     font-size: 3em
+    font-weight: bold
     color: $accent-color
 
     &.center
@@ -29,33 +33,53 @@
       // padding: 10px
       margin: 10px
 
-    img
+    .card-item
+      padding: 10px
 
-      &.round
-        border-radius: 50%
-        width: 100%
-        height: 100%
-        // flex-grow: 0
-        // flex-basis: 40%
-        // height: auto
-        object-fit: contain
-        // display: table
-        // width: 100%
-        // max-width: 100px
-        // max-height: 100%
-        // height: 100vh
-        background-color: red
-      // &.card-image-2
-        // width: 20%
-        // flex: 2
-        // width: 1000px
-        // height: auto
-      &.divider
-        width: 50px
-        height: auto
-        align-self: center
-        // height: 10vh
-        // width: auto
+      &.left-text
+        p, h4
+          text-align: left
+          margin-left: 20px
+      &.right-text
+        p, h4
+          text-align: right
+          margin-right: 20px
+
+    .img-container
+      // width: 100px
+      display: grid
+      // grid-template-columns: repeat(auto-fill, minmax(100%, 100%))
+
+      img
+
+        max-width: 100%
+
+        &.round
+          border-radius: 50%
+          // width: 100%
+          // height: 100%
+          // flex-grow: 0
+          // flex-basis: 40%
+          // height: auto
+          // object-fit: cover
+          // display: table
+          // width: 100%
+          // max-width: 100px
+          // max-height: 100%
+          // height: 100vh
+          // background-color: red
+          border: 1px solid black
+        // &.card-image-2
+          // width: 20%
+          // flex: 2
+          // width: 1000px
+          // height: auto
+        &.divider
+          width: 50px
+          height: auto
+          align-self: center
+          // height: 10vh
+          // width: auto
 
     h4
       font-size: 2em

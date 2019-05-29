@@ -11,20 +11,47 @@ body
   .header_image
     max-width: 100%
     margin: auto
+    height: 300px
+    width: 100%
+    object-fit: cover
+    margin-bottom: 30px
+    // position: absolute
+    // top: 0px
+    // z-index: -1
 
 
   nav
     //padding: 0 5%;
-    //position: fixed;
-    margin-bottom: 30px
+    // position: absolute
+    // top: 0px
+    // margin-bottom: 30px
+    z-index: 1
+    width: 100%
+    background-image: url("/wp-content/themes/AxenuAB/images/header_image.jpg")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    // margin-top: -100%
+    // padding-top: -100%
+    // background-color: red
+    padding: 10px 0px
+    // padding-to: 10px
+    // padding-bottom: 250px
+    margin-bottom: 50px
 
     ul
       display: flex
       flex-direction: row
       justify-content: space-around
+      // margin-bottom: 50px
 
     li
       list-style-type: none
+      padding: 20px
+
+      &:hover
+        background-color: rgba(0,0,0,0.2)
+        border-radius: 2px
 
     a
       text-decoration: none
@@ -32,78 +59,13 @@ body
       color: $white
       text-transform: uppercase
 
-  // .card
-  //   margin: 0px 10%
-  //   margin-bottom: 50px
-  //   background-color: white
-  //   // display: inline-block
-  //   @include box-shadow(0px,0px,15px,rgba(0,0,0,0.3),false)
-  //   border: 0
-  //   padding: 60px
-  //   display: flex
-  //   flex-direction: column
-  //   // flex-grow: 1
-  //
-  //   .card-body
-  //     display: flex
-  //     // flex-grow: 1
-  //     flex-direction: row
-  //     flex-wrap: wrap
-  //     // padding: 10px
-  //
-  //     .item4x4
-  //       background-color: red
-  //       padding: 10px
-  //
-  //   .column
-  //     // flex: auto
-  //     width: 50%
-  //     flex-direction: column
-  //     // padding: 10px
-  //
-  //     // &.column-vertical
-  //       flex-direction: row
-  //
-  //     .dividerImage
-  //       width: 50px
-  //       align-self: center
-  //
-  //
-  //     &.full-image
-  //       img
-  //         width: 90%
-  //         align-self: center
-  //         border-radius: 50%
-  //         @include box-shadow(0px,1px,3px,rgba(0,0,0,0.1),false)
-  //
-  //       .image-text
-  //         color: gray
-  //         font-style: italic
-  //         font-size: 0.8em
-  //         margin-top: 10px
-  //         align-self: center
-  //     *
-  //       margin-top: 20px
-  //   h3
-      // font-size: 3em
-      // color: $accent-color
-  //
-  //   button
-  //     background-color: $accent-color
-  //     color: $white
-  //     border: none
-  //     text-transform: uppercase
-  //     font-family: inherit
-  //     letter-spacing: 1px
-  //     @include box-shadow(3px,3px,10px,rgba(0,0,0,0.3),false)
-  //     padding: 0.3em 1em
-  //
-  //   .header-center
-  //     // align-self: center
-  //     // display: flex
-  //     // justify-content: center
-  //     width: 100%
-  //
+    h2
+      color: white
+      font-size: 6em
+      font-weight: bold
+      // align-self: center
+      text-align: center
+      padding: 50px
 
   section
     display: flex
