@@ -39,7 +39,7 @@ registerBlockType( 'cgb/block-axenu-blocks', {
 		// __("create-guten-block")
 	],
 	attributes: {
-		title: { type: 'string' },
+		title: { type: 'string', value: 'default title' },
 		body1: { type: 'array', source: 'children', selector: 'p' },
 		body2: { type: 'array', source: 'children', selector: 'p' },
 		fullImageAlt: {
@@ -153,33 +153,69 @@ registerBlockType( 'cgb/block-axenu-blocks', {
 		);
 	},
 
+	// <div className="card">
+	// 	<div className="column column-vertical">
+	// 		<h3>{ props.attributes.title }</h3>
+	// 		{ props.attributes.body1 }
+	// 		<img
+	// 			className="dividerImage"
+	// 			src={ props.attributes.divider1ImageUrl }
+	// 			alt={ props.attributes.divider1ImageAlt }
+	// 		/>
+	// 		{ props.attributes.body2 }
+	// 		<img
+	// 			className="dividerImage"
+	// src={ props.attributes.divider2ImageUrl }
+	// alt={ props.attributes.divider2ImageAlt }
+	// 		/>
+	// 		<button type="button" name="button">
+	// 			Read our story
+	// 		</button>
+	// 	</div>
+	// 	<div className="column full-image">
+	// 		<img
+	// src={ props.attributes.fullImageUrl }
+	// alt={ props.attributes.fullImageAlt }
+	// 		/>
+	// 		<p className="image-text">{ props.attributes.fullImageText }</p>
+	// 	</div>
+	// </div>
 	save: function( props ) {
 		return (
 			<div className="card">
-				<div className="column column-vertical">
-					<h3>{ props.attributes.title }</h3>
-					{ props.attributes.body1 }
-					<img
-						className="dividerImage"
-						src={ props.attributes.divider1ImageUrl }
-						alt={ props.attributes.divider1ImageAlt }
-					/>
-					{ props.attributes.body2 }
-					<img
-						className="dividerImage"
-						src={ props.attributes.divider2ImageUrl }
-						alt={ props.attributes.divider2ImageAlt }
-					/>
-					<button type="button" name="button">
-						Read our story
-					</button>
-				</div>
-				<div className="column full-image">
-					<img
-						src={ props.attributes.fullImageUrl }
-						alt={ props.attributes.fullImageAlt }
-					/>
-					<p className="image-text">{ props.attributes.fullImageText }</p>
+				<div className="card-body">
+					<div className="card-column flex-6">
+						<h3>{ props.attributes.title }</h3>
+						<div className="img-container">
+							<img
+								src={ props.attributes.divider1ImageUrl }
+								alt={ props.attributes.divider1ImageAlt }
+								className="divider"
+							/>
+						</div>
+						<p>{ props.attributes.body1 }</p>
+						<div className="img-container">
+							<img
+								src={ props.attributes.divider2ImageUrl }
+								alt={ props.attributes.divider2ImageAlt }
+								className="divider"
+							/>
+						</div>
+						<p>{ props.attributes.body2 }</p>
+						<button type="button" name="button">
+							Read our story
+						</button>
+					</div>
+					<div className="card-column flex-4 ">
+						<div className="flex-4 img-container">
+							<img
+								src={ props.attributes.fullImageUrl }
+								alt={ props.attributes.fullImageAlt }
+								className="round vertical-center"
+							/>
+						</div>
+						<p className="image-text">{ props.attributes.fullImageText }</p>
+					</div>
 				</div>
 			</div>
 		);
