@@ -1,9 +1,9 @@
 <template>
-  <div class="card">
+  <div class="card" v-if="blogActive">
     <h3 class="center">Latest blog posts</h3>
     <div class="card-body">
       <div class="card-row">
-        <div class="card-column" v-for="(post, key) in blogPosts" :key="key">
+        <div class="card-column min-w-3" v-for="(post, key) in blogPosts" :key="key">
           <img class="rect-image" :src="post.headerImage" alt="Image of founer">
           <h4>{{post.title}}</h4>
           <p>{{key}}</p>
@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import firebase from "firebase";
-
 export default {
   name: "LatestBlogPosts",
   props: [],
@@ -26,6 +24,9 @@ export default {
   computed: {
     blogPosts() {
       return this.$store.state.blogPosts;
+    },
+    blogActive() {
+      return this.$store.state.blogActive;
     }
   },
   mounted() {

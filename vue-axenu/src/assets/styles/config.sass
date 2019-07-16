@@ -15,8 +15,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body
 	line-height: 1
 
-ol, ul
-	list-style: none
+// ol, ul
+// 	list-style: none
 
 blockquote, q
 	quotes: none
@@ -58,3 +58,28 @@ $shadow: 3px 3px 6px rgba(0, 0, 0, 0.5)
 	background: nth(nth($color-stops, 1), 1)
 	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops)
 	background: linear-gradient($direction, $color-stops)
+
+
+.navbar-nav
+	.dropdown
+
+		.nav-link 
+			&.dropdown-toggle
+				color: white
+				&:hover
+					background-color: rgba(0,0,0,0.2)
+					border-radius: 5px
+
+		.dropdown-menu
+			background-color: black
+			border-radius: 0
+			padding: 0
+
+
+			.dropdown-item
+				padding: 10px 30px
+				&:hover
+					background-color: #222
+
+			a
+				color: white

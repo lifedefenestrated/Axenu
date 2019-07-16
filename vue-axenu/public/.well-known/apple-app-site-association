@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "BGAEM8HDFP.com.hotlify.mobile",
+        "paths": ["*"]
+      }
+    ]
+  }
+}

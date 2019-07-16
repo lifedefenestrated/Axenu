@@ -13,11 +13,26 @@ function isEmptyObject(obj) {
 
 export default new Vuex.Store({
   state: {
+    blogActive: false,
     blogPosts: {},
+    products: {
+      brollop: {
+        title: "Dream Weddings with Great Weddings",
+        body: "Lite body",
+        headerImage: "",
+      },
+      // micke: {
+      //   title: "micke",
+      //   body: "mickebody",
+      // },
+    },
   },
   mutations: {
     setBlogPosts(state, payload) {
       state.blogPosts = payload;
+    },
+    setBlogPost(state, payload) {
+      state.blogPosts[payload.key] = payload.data;
     },
   },
   actions: {
@@ -31,6 +46,12 @@ export default new Vuex.Store({
             commit("setBlogPosts", snapshot.val());
           });
       }
+    },
+    updateBlogPost({ state, commit }, payload) {
+      commit("setBlogPost", payload);
+      var updates = {};
+      updates["blog-posts/" + payload.key] = payload.data;
+      return firebase.database().ref().update(updates);
     },
   },
 });

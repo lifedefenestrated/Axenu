@@ -1,23 +1,22 @@
 <template>
   <div class="blog">
     <NavBar :title="$options.name"></NavBar>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(post, key) in blogPosts" :key="post.key">
-          <td>
-            <p>{{post.title}}</p>
-            <p>{{key}}</p>
-          </td>
-          <!-- <td>{{book.author}}</td> -->
-        </tr>
-      </tbody>
-    </table>
+
+    <div>
+      <div class="card card-action" v-for="(post, key) in blogPosts" :key="key">
+        <h3 v-on:click="selectPost(key)">{{post.title}}</h3>
+        <div class="card-body card-row">
+          <div class="card-column">
+            <Markdown :content="firstBlock(post.body)"></Markdown>
+            <p>Read more...</p>
+          </div>
+          <div class="card-column">
+            <img class="rect-image" :src="post.headerImage" alt="Image of founer">
+            <p>{{formatDate(post.date)}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,11 +24,13 @@
 // import Firebase from "firebase";
 // import { db } from "../config/firebase";
 import NavBar from "@/components/NavBar.vue"; // @ is an alias to /src
+import Markdown from "@/components/Markdown.vue"; // @ is an alias to /src
 
 export default {
   name: "Blog",
   components: {
-    NavBar
+    NavBar,
+    Markdown
   },
   data() {
     return {};
@@ -45,6 +46,27 @@ export default {
   methods: {
     getBlogPosts() {
       this.$store.dispatch("getBlogPosts");
+    },
+    formatDate(time) {
+      if (!time) {
+        return "";
+      }
+      try {
+        var date = new Date(time);
+        return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+      } catch (e) {
+        return "Invalid time format";
+      }
+    },
+    selectPost(key) {
+      this.$router.push(`/blogpost/${key}`);
+    },
+    firstBlock(text) {
+      // split by second newline
+      if (!text) {
+        return "";
+      }
+      return text.split("\n")[0];
     }
   }
 };
