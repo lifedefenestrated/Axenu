@@ -40,12 +40,19 @@
       <div class="card-body">
         <div class="card-column">
           <h3>Send a Message</h3>
-          <p class="errorMessage" v-if="errorMessage">{{errorMessage}}</p>
-          <p v-if="sentMessage">{{sentMessage}}</p>
+          <p class="errorMessage" v-if="errorMessage">{{ errorMessage }}</p>
+          <p v-if="sentMessage">{{ sentMessage }}</p>
           <input type="text" placeholder="Your email" v-model="email" />
           <!-- <Input type="text" placeholder="Name" v-model="name"/> -->
           <textarea placeholder="Your message" v-model="message" />
-          <button class="button" v-on:click="submitForm" type="button" name="button">Send</button>
+          <button
+            class="button"
+            v-on:click="submitForm"
+            type="button"
+            name="button"
+          >
+            Send
+          </button>
         </div>
       </div>
     </div>
@@ -55,7 +62,8 @@
 <script>
 import NavBar from "@/components/NavBar.vue"; // @ is an alias to /src
 // const functions = require('firebase-functions');
-import firebase from "firebase";
+// import firebase from "firebase";
+import firebase from "firebase/app";
 import Social from "@/components/Social.vue";
 
 export default {

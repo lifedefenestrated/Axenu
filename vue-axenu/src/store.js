@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 Vue.use(Vuex);
 
@@ -19,13 +19,13 @@ export default new Vuex.Store({
       brollop: {
         title: "Dream Weddings with Great Weddings",
         body: "Lite body",
-        headerImage: "",
-      },
+        headerImage: ""
+      }
       // micke: {
       //   title: "micke",
       //   body: "mickebody",
       // },
-    },
+    }
   },
   mutations: {
     setBlogPosts(state, payload) {
@@ -33,7 +33,7 @@ export default new Vuex.Store({
     },
     setBlogPost(state, payload) {
       state.blogPosts[payload.key] = payload.data;
-    },
+    }
   },
   actions: {
     getBlogPosts({ state, commit }) {
@@ -51,7 +51,10 @@ export default new Vuex.Store({
       commit("setBlogPost", payload);
       var updates = {};
       updates["blog-posts/" + payload.key] = payload.data;
-      return firebase.database().ref().update(updates);
-    },
-  },
+      return firebase
+        .database()
+        .ref()
+        .update(updates);
+    }
+  }
 });

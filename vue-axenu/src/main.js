@@ -1,10 +1,14 @@
 import Vue from "vue";
+import VueAnalytics from "vue-analytics";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import { rtdbPlugin } from "vuefire";
-import Firebase from "firebase";
-import { config } from "./config/firebase";
+import "./config/firebase";
+
+Vue.use(VueAnalytics, {
+  id: "UA-44513716-1",
+  router
+});
 
 // bootstrap
 import BootstrapVue from "bootstrap-vue";
@@ -20,5 +24,5 @@ Vue.use(BootstrapVue);
 new Vue({
   router,
   store,
-  render: h => h(App),
+  render: h => h(App)
 }).$mount("#app");

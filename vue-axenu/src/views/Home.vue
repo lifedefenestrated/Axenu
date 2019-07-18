@@ -15,13 +15,23 @@
           <!-- <img src="../assets/images/frame-2.png" alt="Icon divider" class="divider"> -->
 
           <!-- </div> -->
-          <p>We aim to build services that can improve your daily life. From a simple tool that saves a few seconds every day, to complex services that allow you to do thing you previously thought impossible</p>
+          <p>
+            We aim to build services that can improve your daily life. From a
+            simple tool that saves a few seconds every day, to complex services
+            that allow you to do thing you previously thought impossible
+          </p>
           <!-- <div class="img-container">
             <img src="../assets/images/frame-2.png" alt="Icon divider" class="divider">
           </div>-->
           <!-- <div class="divider"></div> -->
           <Divider></Divider>
-          <p>We believe that it is important to make simple software that is fun to use. Software should never become an obstacle and used efficiently it can make everything simplier. We also believe that the user is the most important part of every project, and therefore we listen to every suggestion you have.</p>
+          <p>
+            We believe that it is important to make simple software that is fun
+            to use. Software should never become an obstacle and used
+            efficiently it can make everything simplier. We also believe that
+            the user is the most important part of every project, and therefore
+            we listen to every suggestion you have.
+          </p>
           <!-- <button type="button" name="button">Read our story</button> -->
           <b-link to="about" class="button">Read our story</b-link>
         </div>
@@ -64,7 +74,10 @@
             />
           </div>
           <div class="card-column">
-            <p>"Ett underbart verktyg i vår bröllopsplanering! Så himla smidigt och älskar länkarna mellan de olika sidorna i appen"</p>
+            <p>
+              "Ett underbart verktyg i vår bröllopsplanering! Så himla smidigt
+              och älskar länkarna mellan de olika sidorna i appen"
+            </p>
             <!-- <p>get on app store</p> -->
             <!-- <img
               src="../assets/images/apple/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
@@ -73,7 +86,9 @@
 
             <DownloadApp type="google"></DownloadApp>
             <DownloadApp type="apple"></DownloadApp>
-            <b-link to="products/brollop" class="button">More about the app</b-link>
+            <b-link to="products/brollop" class="button"
+              >More about the app</b-link
+            >
           </div>
           <!-- <div class="card-column column-small">
           <div class="arrow"></div>
@@ -117,8 +132,4 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-
-
-
-</style>
+<style lang="sass" scoped></style>
