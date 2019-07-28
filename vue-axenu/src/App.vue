@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
 
     <Footer></Footer>
   </div>
@@ -17,7 +17,6 @@ export default {
 };
 </script>
 
-
 <style lang="sass">
 @import "./assets/styles/config.sass"
 @import "./assets/styles/card.sass"
@@ -33,8 +32,8 @@ export default {
   height: 100%
   // justify-content: space-between
   // align-content: space-between
-  display:flex
-  
+  // display: flex
+
 html
   // height: 100%
   min-height: 100%

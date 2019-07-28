@@ -16,21 +16,35 @@
         <div class="card-column flex-2">
           <h3>Plan your wedding</h3>
           <p>
-            Sweden’s best wedding planner shares all her tips and tricks from many years of experience. This app has got everything you need, starting off with an easy to follow 7 step checklist, taking you all the way to your dream wedding.
-            Other smart tools included are:
+            Sweden’s best wedding planner shares all her tips and tricks from
+            many years of experience. This app has got everything you need,
+            starting off with an easy to follow 7 step checklist, taking you all
+            the way to your dream wedding. Other smart tools included are:
           </p>
           <div class="card-row">
-            <div class="card-column column-small no-margin">
+            <div class="card-column column-small no-margin margin-right">
               <h5>Budget</h5>
-              <p>Budget tool where you can easily plan your budget and easily sum up all your needs. It also includes smart suggestions of most of the common items that your budget should include</p>
+              <p>
+                Budget tool where you can easily plan your budget and easily sum
+                up all your needs. It also includes smart suggestions of most of
+                the common items that your budget should include
+              </p>
             </div>
-            <div class="card-column column-small no-margin">
+            <div class="card-column column-small no-margin margin-right">
               <h5>Priority</h5>
-              <p>Priority-list where you can decide and follow what you think is the most important for you wedding. Knowing what you want to focus on will get you a long way</p>
+              <p>
+                Priority-list where you can decide and follow what you think is
+                the most important for you wedding. Knowing what you want to
+                focus on will get you a long way
+              </p>
             </div>
-            <div class="card-column column-small no-margin">
+            <div class="card-column column-small no-margin margin-right">
               <h5>Guests</h5>
-              <p>Guest-list where you can gather all your guests, keep track of who is coming and address lists. It is also integrated into our table setting tool</p>
+              <p>
+                Guest-list where you can gather all your guests, keep track of
+                who is coming and address lists. It is also integrated into our
+                table setting tool
+              </p>
             </div>
           </div>
         </div>
@@ -166,11 +180,6 @@ export default {
   height: 50px
   background-color: red
 
-
-// .screenshot
-//   width: 200px
-//   margin-right: 10px
-
 .googleBadge
   max-width: 150px
   max-height: 100px
@@ -178,5 +187,4 @@ export default {
 
 li
   text-align: left
-
 </style>

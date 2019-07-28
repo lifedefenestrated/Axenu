@@ -25,7 +25,8 @@
     </div>
     <div class="row">
       <h5>
-        <a href="mailto:simon@axenu.se">simon@axenu.se</a> | Copyright Axenu 2019 | Designed by Sofia Tatidis
+        <a href="mailto:simon@axenu.se">simon@axenu.se</a> | Copyright Axenu
+        2019 | Designed by Sofia Tatidis
       </h5>
     </div>
   </footer>
@@ -80,5 +81,4 @@ footer
     height: 80px
     margin: 0px 10px
     // border-radius: 50px
-
 </style>

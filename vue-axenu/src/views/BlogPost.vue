@@ -3,14 +3,17 @@
     <NavBar :title="blogPost.title || ''" smallTitle="true"></NavBar>
 
     <div class="card">
-      <h4>{{blogPost.title}}</h4>
+      <h4>{{ blogPost.title }}</h4>
       <p>Date:</p>
       <Markdown :content="markDownBody"></Markdown>
       <p v-on:click="updateBlogPost">Update</p>
     </div>
 
     <div class="card">
-      <textarea v-model="markDownBody" placeholder="add multiple lines"></textarea>
+      <textarea
+        v-model="markDownBody"
+        placeholder="add multiple lines"
+      ></textarea>
     </div>
 
     <div class="card">
@@ -81,4 +84,3 @@ export default {
 textarea
   height: 200px
 </style>
-

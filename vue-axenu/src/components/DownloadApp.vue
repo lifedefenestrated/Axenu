@@ -1,6 +1,8 @@
 <template>
   <div v-if="type == 'apple'" class="container" v-on:click="click">
-    <img src="../assets/images/apple/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" />
+    <img
+      src="../assets/images/apple/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+    />
   </div>
   <div v-else class="container" v-on:click="click">
     <img src="../assets/images/google/google-play-badge.png" class="image" />
@@ -12,7 +14,6 @@
     />-->
   </div>
 </template>
-
 
 <script>
 export default {
@@ -42,12 +43,11 @@ export default {
   max-height: 100px
   cursor: pointer
   // margin: 10px
-  align-items:center
-  justify-content: center
-  display: flex
+  // align-items: center
+  // justify-content: center
+  // display: flex
 
   .image
     width: 100%
     align-self: center
-
 </style>

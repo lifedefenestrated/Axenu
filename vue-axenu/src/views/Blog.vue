@@ -4,15 +4,19 @@
 
     <div>
       <div class="card card-action" v-for="(post, key) in blogPosts" :key="key">
-        <h3 v-on:click="selectPost(key)">{{post.title}}</h3>
+        <h3 v-on:click="selectPost(key)">{{ post.title }}</h3>
         <div class="card-body card-row">
           <div class="card-column">
             <Markdown :content="firstBlock(post.body)"></Markdown>
             <p>Read more...</p>
           </div>
           <div class="card-column">
-            <img class="rect-image" :src="post.headerImage" alt="Image of founer">
-            <p>{{formatDate(post.date)}}</p>
+            <img
+              class="rect-image"
+              :src="post.headerImage"
+              alt="Image of founer"
+            />
+            <p>{{ formatDate(post.date) }}</p>
           </div>
         </div>
       </div>

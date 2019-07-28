@@ -49,6 +49,4 @@ p, h1, h2, h3, h4, div, code, pre
 
 .markdown-body
   display: block
-
-
 </style>

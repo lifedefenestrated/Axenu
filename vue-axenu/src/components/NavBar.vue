@@ -15,7 +15,8 @@
               v-for="(product, key) in products"
               :key="key"
               :to="`/products/${key}`"
-            >{{product.title}}</b-dropdown-item>
+              >{{ product.title }}</b-dropdown-item
+            >
           </b-nav-item-dropdown>
           <b-nav-item to="/contact">Contact</b-nav-item>
           <!-- <b-nav-item to="/products">Products</b-nav-item> -->
@@ -48,10 +49,15 @@
         <li><a href="#">Blog</a></li>
       </ul>
     </nav>-->
-    <h1 v-if="!home" :class="{smallTitle: smallTitle}">{{title || "Missing title"}}</h1>
+    <h1 v-if="!home" :class="{ smallTitle: smallTitle }">
+      {{ title || "Missing title" }}
+    </h1>
 
     <div v-if="home" class="iconContainer">
-      <img src="../assets/images/loggo/loggo_white_transparent.png" class="icon" />
+      <img
+        src="../assets/images/loggo/loggo_white_transparent.png"
+        class="icon"
+      />
     </div>
     <h2 v-if="home">We Build the Service of the Future</h2>
   </div>
@@ -187,5 +193,4 @@ h2
 //   &:hover
 //     .dropdownContainer
 //       display: flex
-
 </style>

@@ -3,15 +3,23 @@
     <NavBar :title="$options.name"></NavBar>
 
     <div>
-      <div class="card card-action" v-for="(product, key) in products" :key="key">
-        <h3 v-on:click="selectPost(key)">{{product.title}}</h3>
+      <div
+        class="card card-action"
+        v-for="(product, key) in products"
+        :key="key"
+      >
+        <h3 v-on:click="selectPost(key)">{{ product.title }}</h3>
         <div class="card-body card-row">
           <div class="card-column">
             <!-- <Markdown :content="firstBlock(post.body)"></Markdown> -->
-            <p>{{product.body}}</p>
+            <p>{{ product.body }}</p>
           </div>
           <div class="card-column">
-            <img class="rect-image" :src="product.headerImage" alt="Image of product">
+            <img
+              class="rect-image"
+              :src="product.headerImage"
+              alt="Image of product"
+            />
             <!-- <p>{{formatDate(post.date)}}</p> -->
           </div>
         </div>

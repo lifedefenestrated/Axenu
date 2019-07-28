@@ -1,12 +1,12 @@
 <template>
   <div>
     <div v-if="type == 'facebook'" class="social" v-on:click="click">
-      <div class="socialImageContainer" :class="{large: large}">
+      <div class="socialImageContainer" :class="{ large: large }">
         <img
           src="../assets/images/facebook/f_logo_RGB-Blue_100.png"
           alt="Icon divider"
           class="socialImage"
-          :class="{large: large}"
+          :class="{ large: large }"
         />
       </div>
       <div class="socialLabelContainer">
@@ -14,12 +14,12 @@
       </div>
     </div>
     <div v-if="type == 'linkedin'" class="social" v-on:click="click">
-      <div class="socialImageContainer" :class="{large: large}">
+      <div class="socialImageContainer" :class="{ large: large }">
         <img
           src="../assets/images/linkedin/LI-In-Bug.png"
           alt="Icon divider"
           class="socialImage"
-          :class="{large: large}"
+          :class="{ large: large }"
         />
       </div>
       <div class="socialLabelContainer">
@@ -27,12 +27,12 @@
       </div>
     </div>
     <div v-if="type == 'twitter'" class="social" v-on:click="click">
-      <div class="socialImageContainer" :class="{large: large}">
+      <div class="socialImageContainer" :class="{ large: large }">
         <img
           src="../assets/images/twitter/Twitter_Social_Icon_Circle_Color.png"
           alt="Icon divider"
           class="socialImage"
-          :class="{large: large}"
+          :class="{ large: large }"
         />
       </div>
       <div class="socialLabelContainer">
@@ -41,7 +41,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -92,10 +91,9 @@ export default {
     flex: 1
     flex-direction: column
     justify-content: center
-    
+
     .socialLabel
       margin: 0
       padding: 0
       margin-left: 10px
-
 </style>

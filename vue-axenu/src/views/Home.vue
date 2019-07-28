@@ -73,7 +73,9 @@
               alt="Image of product"
             />
           </div>
-          <div class="card-column">
+          <div class="img-container ios-screenshot">
+            <!-- </div>
+          <div class="card-column"> -->
             <p>
               "Ett underbart verktyg i vår bröllopsplanering! Så himla smidigt
               och älskar länkarna mellan de olika sidorna i appen"
