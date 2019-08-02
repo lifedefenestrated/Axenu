@@ -54,9 +54,9 @@ export default {
   computed: {
     blogPost() {
       if (this.$store.state.blogPosts[this.$route.params.key]) {
-        this.markDownBody = this.$store.state.blogPosts[
-          this.$route.params.key
-        ].body;
+        // this.markDownBody = this.$store.state.blogPosts[
+        //   this.$route.params.key
+        // ].body;
       }
       return this.$store.state.blogPosts[this.$route.params.key] || {};
     }

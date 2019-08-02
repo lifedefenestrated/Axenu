@@ -24,12 +24,14 @@ export default {
                 hljs.highlight(lang, str, true).value +
                 "</code></pre>"
               );
-            } catch (__) {}
+            } catch (__) {
+              console.error("cant render markdown highlight");
+            }
           }
 
           return (
             '<pre class="hljs"><code>' +
-            md.utils.escapeHtml(str) +
+            // md.utils.escapeHtml(str) + //TODO: Add this when blog is ready.
             "</code></pre>"
           );
         }

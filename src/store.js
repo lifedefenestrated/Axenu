@@ -47,7 +47,7 @@ export default new Vuex.Store({
           });
       }
     },
-    updateBlogPost({ state, commit }, payload) {
+    updateBlogPost({ commit }, payload) {
       commit("setBlogPost", payload);
       var updates = {};
       updates["blog-posts/" + payload.key] = payload.data;
