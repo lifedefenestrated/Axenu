@@ -3,7 +3,7 @@
     <NavBar :title="$options.name"></NavBar>
 
     <div>
-      <div class="card card-action" v-for="(post, key) in blogPosts" :key="key">
+      <div class="card card-action" v-for="(post, key) in posts" :key="key">
         <h3 v-on:click="selectPost(key)">{{ post.title }}</h3>
         <div class="card-body card-row">
           <div class="card-column">
@@ -72,6 +72,22 @@ export default {
       }
       return text.split("\n")[0];
     }
+  },
+
+  async asyncData({ app }) {
+    const { data } = await app.$axios.post(
+      "http://localhost:8080/api/collections/get/blogposts?token=33e0931c16c9feee202fa016554e47",
+      JSON.stringify({
+        filter: { published: true },
+        sort: { _created: -1 },
+        populate: 1
+      }),
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
+
+    return { posts: data.entries };
   }
 };
 </script>

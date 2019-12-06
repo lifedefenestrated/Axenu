@@ -13,8 +13,8 @@ const nodemailer = require("nodemailer");
 admin.initializeApp(functions.config().firebase);
 
 /**
-* Here we're using Gmail to send 
-*/
+ * Here we're using Gmail to send
+ */
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
 
@@ -26,8 +26,8 @@ let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: gmailEmail,
-    pass: gmailPassword,
-  },
+    pass: gmailPassword
+  }
 });
 
 exports.sendMail = functions.https.onCall((data, context) => {
@@ -36,11 +36,11 @@ exports.sendMail = functions.https.onCall((data, context) => {
   const text = data.content + "\n\n sender: " + data.sender;
 
   const mailOptions = {
-    from: "Axenu.com <" + gmailEmail + ">", // Something like: Jane Doe <janedoe@gmail.com>
+    from: sender, // Something like: Jane Doe <janedoe@gmail.com>
     to: gmailEmail,
     subject: "Contact form",
     text: text,
-    reply_to: sender,
+    replyTo: sender
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
