@@ -6,7 +6,7 @@
       <h4>{{ product.title }}</h4>
     </div> -->
 
-    <div v-for="component in product.components" :key="component.component">
+    <!-- <div v-for="component in product.components" :key="component.component">
       <Highlight
         v-if="component.component === 'highlight'"
         :settings="component.settings"
@@ -19,7 +19,11 @@
         v-else-if="component.component === 'appImages'"
         :settings="component.settings"
       ></AppImages>
-    </div>
+    </div> -->
+
+    <ComponentFlow v-if="product" :components="product.components">
+
+    </ComponentFlow>
 
     <!-- <div class="card">
       <textarea
@@ -47,6 +51,7 @@ import NavBar from '../../components/NavBar.vue' // @ is an alias to /src
 import Highlight from '../../components/cards/highlight.vue'
 import AboutProduct from '../../components/cards/aboutProduct.vue'
 import AppImages from '../../components/cards/appImages.vue'
+import ComponentFlow from '../../components/ComponentFlow.vue'
 
 export default {
   name: 'BlogPost',
@@ -56,7 +61,8 @@ export default {
     //cards
     Highlight,
     AboutProduct,
-    AppImages
+    AppImages,
+    ComponentFlow
   },
   data() {
     return {}
@@ -89,49 +95,7 @@ export default {
         }
       )
       product = data.entries[0]
-
-      // // if (!data.entries[0]) { // TODO: Handle 404 post not found
-      // //   return error({ message: '404 Page not found', statusCode: 404 })
-      // // }
-      // //   return { post: post, posts: res2.data.entries }
-      // // console.log(data)
-
-      // post = data.entries[0]
-
-      // let result = await app.$axios.get(
-      //   process.env.IMAGE_URL +
-      //     '&w=1200&h=300&m=fitToHeight&src=storage/uploads' +
-      //     post.image.path
-      // )
-      // post.imageUrl = result.data
     }
-
-    // fetch date for latest blog posts
-    // const res2 = await app.$axios.post(
-    //   process.env.POSTS_URL,
-    //   JSON.stringify({
-    //     filter: { published: true },
-    //     sort: { _created: -1 },
-    //     populate: 1
-    //   }),
-    //   {
-    //     headers: { 'Content-Type': 'application/json' }
-    //   }
-    // )
-    // console.log(res2.data)
-
-    // let posts = await Promise.all(
-    //   await res2.data.entries.map(async p => {
-    //     let result = await app.$axios.get(
-    //       process.env.IMAGE_URL +
-    //         '&w=300&h=300&src=storage/uploads' +
-    //         p.image.path
-    //     )
-
-    //     p.ThumbUrl = result.data
-    //     return p
-    //   })
-    // )
     return { product }
   }
 }

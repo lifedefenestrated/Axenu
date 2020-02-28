@@ -15,7 +15,7 @@
       <p>{{ formatDate(post._created * 1000) }}</p>
       <!-- <Markdown :content="markDownBody"></Markdown> -->
       <Markdown :content="post.content" class="markdown-container"></Markdown>
-      <p v-on:click="updateBlogPost">Update</p>
+      <!-- <p v-on:click="updateBlogPost">Update</p> -->
     </div>
 
     <!-- <div class="card">

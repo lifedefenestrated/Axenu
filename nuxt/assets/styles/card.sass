@@ -14,6 +14,14 @@
   display: flex
   flex-direction: column
 
+
+  span.bullet:before
+    content: "• "
+
+  p, h1, h2, h3, h4
+    &.center
+      align-self: center
+
   .rect-image
     width: 100%
 
@@ -64,6 +72,13 @@
     &.errorMessage
       color: red
 
+
+
+      // flex-direction: row
+      // list-style-type: disc
+      // display: list-item
+      // list-style-position: inside
+
   .markdown-body
     img
       alignSelf: center
@@ -85,8 +100,6 @@
     @media (max-width: 500px)
       font-size: 10vw
 
-    &.center
-      align-self: center
 
   .card-body
     flex-direction: row
@@ -194,6 +207,7 @@
       align-self: center
       min-width: 300px
       margin: 10px
+      
       // margin-right: 10px
       // grid-template-columns: repeat(auto-fill, minmax(100%, 100%))
 
@@ -212,6 +226,7 @@
       img
         aspect-ratio: 1
         max-width: 100%
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         // max-height: 
 
         &.rect-image

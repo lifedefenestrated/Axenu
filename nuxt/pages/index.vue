@@ -43,69 +43,14 @@
               class="round vertical-center"
             />
           </div>
-          <p class="image-text">Simon Nilsson, CEO and founder of Axenu</p>
+          <p class="image-text center">Simon Nilsson, CEO and founder of Axenu</p>
         </div>
       </div>
     </div>
 
-    <div class="card card-action">
-      <h3 v-on:click="gotoDreamwedding">Drömbröllop med Great Weddings</h3>
-      <div class="card-body">
-        <div class="card-row center">
-          <div class="img-container ios-screenshot">
-            <img
-              class="screenshot"
-              src="../assets/images/dreamwedding/screenshot1.jpg"
-              alt="Image of product"
-            />
-          </div>
-          <div class="img-container ios-screenshot">
-            <img
-              class="screenshot"
-              src="../assets/images/dreamwedding/screenshot2.jpg"
-              alt="Image of product"
-            />
-          </div>
-          <div class="img-container ios-screenshot">
-            <img
-              class="screenshot"
-              src="../assets/images/dreamwedding/screenshot3.jpg"
-              alt="Image of product"
-            />
-          </div>
-          <div class="img-container ios-screenshot">
-            <!-- </div>
-          <div class="card-column"> -->
-            <div class="rating">
-              <Rating rating="4"></Rating>
-              <p class="rating-content">
-                "Ett underbart verktyg i vår bröllopsplanering! Så himla smidigt
-                och älskar länkarna mellan de olika sidorna i appen"
-              </p>
-              <p class="rating-author">-ErikSofia, App Store</p>
-            </div>
-            <!-- <p>get on app store</p> -->
-            <!-- <img
-              src="../assets/images/apple/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-            />-->
-            <!-- <img src="../assets/images/google/google-play-badge.png" class="googleBadge" /> -->
+    <!-- <MyPart></MyPart> -->
 
-            <DownloadApp type="google"></DownloadApp>
-            <DownloadApp type="apple"></DownloadApp>
-            <b-link to="products/brollop" class="button"
-              >More about the app</b-link
-            >
-          </div>
-          <!-- <div class="card-column column-small">
-          <div class="arrow"></div>
-        </div>
-
-        <div class="card-column column-small">
-          <div class="arrow"></div>
-          </div>-->
-        </div>
-      </div>
-    </div>
+    <ComponentFlow v-if="components" :components="components"></ComponentFlow>
 
     <LatestBlogPosts :posts="posts"></LatestBlogPosts>
   </div>
@@ -117,6 +62,8 @@ import LatestBlogPosts from '@/components/cards/LatestBlogPosts.vue' // @ is an 
 import Divider from '@/components/Divider.vue' // @ is an alias to /src
 import Rating from '@/components/Rating.vue' // @ is an alias to /src
 import DownloadApp from '@/components/DownloadApp.vue' // @ is an alias to /src
+import ComponentFlow from '@/components/ComponentFlow.vue' // @ is an alias to /src
+import MyPart from '@/components/cards/MyPart.vue'
 
 export default {
   name: 'home',
@@ -125,7 +72,9 @@ export default {
     LatestBlogPosts,
     Divider,
     DownloadApp,
-    Rating
+    Rating,
+    ComponentFlow,
+    MyPart
   },
   data() {
     return {
@@ -138,36 +87,33 @@ export default {
       this.$router.push({ path: 'products/brollop' })
     }
   },
-  async asyncData({ app }) {
-    console.log(process.env.POSTS_URL, 'url')
+  async asyncData({ app, params }) {
+    // var components = payload
+    // console.log(payload);
+
+    // if (!payload) {
+    let { data: homeData } = await app.$axios.get(
+      'https://cockpit.axenu.com/api/singletons/get/home?token=ad5bf77cc0fb358931a4247452fcea',
+      JSON.stringify({}),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      }
+    )
+
+    let components = homeData.components
+
     const { data } = await app.$axios.post(
       process.env.POSTS_URL,
       JSON.stringify({
         filter: { published: true },
-        // sort: { _created: -1 },
+        sort: { _created: -1 },
         populate: 1
       }),
       {
         headers: { 'Content-Type': 'application/json' }
       }
     )
-
-    // let posts = await Promise.all(
-    //   await data.entries.map(async p => {
-    //     //     let result = await app.$axios.get(
-    //     //       process.env.IMAGE_URL +
-    //     //         '&w=300&h=300&src=storage/uploads' +
-    //     //         p.image.path
-    //     //     )
-
-    //     //     p.ThumbUrl = result.data
-    //     // TODO: load image url
-
-    //     return p
-    //   })
-    // )
-    // let posts = data.entries
-    return { posts: data.entries }
+    return { posts: data.entries, components }
     // return { posts: [] }
   }
 }

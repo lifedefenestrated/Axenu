@@ -9,8 +9,8 @@
           <p>070-675 89 42</p>
           <br />
           <p>Office:</p>
-          <p>Västra prinsgatan 20B</p>
-          <p>37135 Karlskrona</p>
+          <p>Campus Gräsvik 4</p>
+          <p>37175 Karlskrona</p>
           <h4>Social Media</h4>
           <Social type="facebook" :hasText="true"></Social>
           <Social type="linkedin" :hasText="true"></Social>
@@ -24,7 +24,7 @@
                 width="100%"
                 height="100%"
                 id="gmap_canvas"
-                src="https://maps.google.com/maps?q=v%C3%A4stra%20prinsgatan%2020b&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=campus%20gr%C3%A4svik%204%20karlskrona&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 frameborder="0"
                 scrolling="no"
                 marginheight="0"
@@ -133,6 +133,6 @@ export default {
   .gmap_canvas
     // overflow: hidden
     // width: 500px
-    height: 350px
+    height: 400px
     // aspect-ratio: 1
 </style>

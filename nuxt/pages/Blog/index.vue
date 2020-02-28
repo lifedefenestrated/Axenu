@@ -80,7 +80,7 @@ export default {
       if (text.length < 800) {
         return text
       }
-      return text.slice(0, 800) + ' ...'
+      return text.slice(0, text.indexOf('\n', 700))
     },
     getImage: image => {
       if (image) {

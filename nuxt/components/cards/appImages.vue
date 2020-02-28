@@ -22,8 +22,8 @@
               src="../assets/images/apple/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
           />-->
         <div style="display: flex; flex-direction: row;">
-          <DownloadApp type="apple" :link="settings.apple_link"></DownloadApp>
-          <DownloadApp type="google" :link="settings.google_link"></DownloadApp>
+          <DownloadApp v-if="settings.apple_link" type="apple" :link="settings.apple_link"></DownloadApp>
+          <DownloadApp v-if="settings.google_link" type="google" :link="settings.google_link"></DownloadApp>
         </div>
       </div>
     </div>

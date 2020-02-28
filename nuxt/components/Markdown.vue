@@ -41,6 +41,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="sass">
 
+@import ../assets/styles/config
+
 p, h1, h2, h3, h4, div, code, pre
   display: block
   text-align: left
@@ -52,4 +54,8 @@ p, h1, h2, h3, h4, div, code, pre
     img
       display: block
       margin: 0 auto
+
+    em
+      color: $accent-color
+      font-style: normal
 </style>
