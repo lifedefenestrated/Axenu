@@ -4,7 +4,7 @@
 
     <div>
       <div class="card card-action" v-for="(post, key) in posts" :key="key">
-        <h3 v-on:click="selectPost(post.title_slug)">{{ post.title }}</h3>
+        <nuxt-link class="h3-link" :to="'blog/' + post.title_slug">{{ post.title }}</nuxt-link>
         <div class="card-body card-row">
           <div class="card-column flex-3">
             <Markdown :content="firstBlock(post.content)"></Markdown>

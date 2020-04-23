@@ -14,7 +14,7 @@
             :src="getImage(post.image)"
             alt="Image of founer"
           />
-          <h4>{{ post.title }}</h4>
+          <nuxt-link :to="'/blog/' + post.title_slug" class="h4-link">{{ post.title }}</nuxt-link>
           <p class="card-date">{{ formatDate(post._created * 1000) }}</p>
         </div>
       </div>
