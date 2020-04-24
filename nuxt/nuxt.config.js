@@ -34,7 +34,8 @@ export default {
     UPLOADS_URL: 'https://cockpit.axenu.com/storage/uploads',
     IMAGE_URL:
       'https://cockpit.axenu.com/api/cockpit/image/?token=ad5bf77cc0fb358931a4247452fcea',
-    STORAGE_URL: 'https://cockpit.axenu.com/storage/uploads/'
+    STORAGE_URL: 'https://cockpit.axenu.com/storage/uploads/',
+    PRIVACY_URL: 'https://cockpit.axenu.com/api/collections/get/privacypolicy?token=ad5bf77cc0fb358931a4247452fcea',
 
     // https://cockpit.axenu.com/storage/uploads/2019/11/20/5dd56153b7b6flinked-in-cover.png
   },
