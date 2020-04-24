@@ -1,11 +1,11 @@
 <template>
   <div class="blog">
-    <NavBar title="Privacy Policy"></NavBar>
+    <NavBar title="Terms and Conditions"></NavBar>
 
     <div>
       <div class="card card-action">
         <div class="card-body card-row" v-for="(policy, key) in policies" :key="key">
-          <nuxt-link class="h4-link" :to="'/privacy-policy/' + policy.title_slug">{{ policy.title }}</nuxt-link>
+          <nuxt-link class="h4-link" :to="'/terms/' + policy.title_slug">{{ policy.title }}</nuxt-link>
           <div class="card-row flex-end">
             <p style="text-align: center;">Modified: {{ formatDate(policy._modified * 1000) }}</p>
           </div>
@@ -21,7 +21,7 @@
 import NavBar from '../../components/NavBar.vue' // @ is an alias to /src
 
 export default {
-  name: 'privacy-policy',
+  name: 'terms',
   components: {
     NavBar
   },
@@ -49,9 +49,12 @@ export default {
         return ''
       }
       try {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' }
         var date = new Date(time)
-        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+        return date.toLocaleDateString('en-US', options) //+ ' ' + date.toLocaleTimeString()
       } catch (e) {
+        console.log(e)
+
         return 'Invalid time format'
       }
     },
@@ -59,7 +62,7 @@ export default {
 
   async asyncData({ app }) {
     const { data } = await app.$axios.post(
-      process.env.PRIVACY_URL,
+      process.env.TERMS_URL,
       JSON.stringify({
         sort: { _modified: -1 },
         // populate: 1

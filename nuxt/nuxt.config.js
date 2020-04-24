@@ -36,6 +36,7 @@ export default {
       'https://cockpit.axenu.com/api/cockpit/image/?token=ad5bf77cc0fb358931a4247452fcea',
     STORAGE_URL: 'https://cockpit.axenu.com/storage/uploads/',
     PRIVACY_URL: 'https://cockpit.axenu.com/api/collections/get/privacypolicy?token=ad5bf77cc0fb358931a4247452fcea',
+    TERMS_URL: 'https://cockpit.axenu.com/api/collections/get/terms?token=ad5bf77cc0fb358931a4247452fcea',
 
     // https://cockpit.axenu.com/storage/uploads/2019/11/20/5dd56153b7b6flinked-in-cover.png
   },
@@ -129,6 +130,20 @@ export default {
             headers: { 'Content-Type': 'application/json' }
           }
         )
+        let { data: policies } = await axios.post(
+          process.env.PRIVACY_URL,
+          JSON.stringify({}),
+          {
+            headers: { 'Content-Type': 'application/json' }
+          }
+        )
+        let { data: terms } = await axios.post(
+          process.env.TERMS_URL,
+          JSON.stringify({}),
+          {
+            headers: { 'Content-Type': 'application/json' }
+          }
+        )
         let routes = products.entries.map(product => {
           console.log(product)
           return {
@@ -139,7 +154,21 @@ export default {
 
         routes += data.entries.map(post => {
           return {
-            route: post.title_slug,
+            route: `blog/${post.title_slug}`,
+            payload: post
+          }
+        })
+
+        routes += policies.entries.map(post => {
+          return {
+            route: `privacy-policy/${post.title_slug}`,
+            payload: post
+          }
+        })
+
+        routes += terms.entries.map(post => {
+          return {
+            route: `terms/${post.title_slug}`,
             payload: post
           }
         })
