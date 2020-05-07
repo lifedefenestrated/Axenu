@@ -117,6 +117,14 @@ export default {
     facebook: function() {
       location.href = 'https://www.facebook.com/Axenu-AB-494206151325798/'
     }
+  },
+  head() {
+    return {
+      title: 'Contact - Axenu',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Contact us to learn more about how we can help you to grow your bussines online' }
+      ]
+    }
   }
 }
 </script>

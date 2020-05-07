@@ -7,15 +7,16 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'Axenu',
+    title: 'Axenu AB',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Axenu is a company building innovative mobile applications'
-      }
+        content: 'Axenu are building modern apps for everyday usecases. No matter if you need a simple app to showcase your company or an advanced application with AR.'
+      },
+      { hid: 'og:image', property: 'og:image', content: '/Axenu-cover-meta.jpg' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     htmlAttrs: {

@@ -123,6 +123,14 @@ export default {
   name: 'About',
   components: {
     NavBar
+  },
+  head() {
+    return {
+      title: 'About us - Axenu',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Who are we and what do we do?' }
+      ]
+    }
   }
 }
 </script>

@@ -107,6 +107,14 @@ export default {
       }
     )
     return { posts: data.entries }
+  },
+  head() {
+    return {
+      title: 'Blog - Axenu',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Read about the techniques we like or learn something new about software development' }
+      ]
+    }
   }
 }
 </script>

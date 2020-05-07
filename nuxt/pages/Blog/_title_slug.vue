@@ -110,7 +110,18 @@ export default {
 
         return 'Invalid time format'
       }
-    }
+    },
+    firstBlock(text) {
+      // split by second newline
+      if (!text) {
+        return ''
+      }
+      // return text.split('\n')[0]
+      if (text.length < 300) {
+        return text
+      }
+      return text.slice(0, text.indexOf('\n', 200))
+    },
   },
   async asyncData({ app, params, payload }) {
     var post = payload
@@ -169,6 +180,14 @@ export default {
     //   })
     // )
     return { post, posts: res2.data.entries }
+  },
+  head() {
+    return {
+      title: `${this.post.title} - Axenu`,
+      meta: [
+        { hid: 'description', name: 'description', content: this.firstBlock(this.post.content) }
+      ]
+    }
   }
 }
 </script>
