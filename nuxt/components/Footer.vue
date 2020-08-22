@@ -25,8 +25,8 @@
     </div>
     <div class="row">
       <h5>
-        <a href="mailto:simon@axenu.se">simon@axenu.se</a> | Copyright Axenu
-        2019 | Designed by Sofia Tatidis
+        <a href="mailto:simon@axenu.com">simon@axenu.com</a> | Copyright Axenu
+        2020 | Designed by Sofia Tatidis
       </h5>
     </div>
   </footer>
