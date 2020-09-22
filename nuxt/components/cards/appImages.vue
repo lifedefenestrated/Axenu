@@ -3,8 +3,8 @@
     <div class="card-body">
       <div class="card-column">
         <h3>{{ settings.title }}</h3>
-        <div class="card-row center">
-          <div class="img-container ios-screenshot">
+        <div class="card-row scroll" >
+          <!-- <div class="img-container ios-screenshot">
             <img class="screenshot" :src="image1" alt="Image of product" />
           </div>
           <div class="img-container ios-screenshot">
@@ -15,6 +15,9 @@
           </div>
           <div class="img-container ios-screenshot">
             <img class="screenshot" :src="image4" alt="Image of product" />
+          </div> -->
+          <div v-for="(image, index) of settings.images" :key="index" class="img-container ios-screenshot">
+            <img class="screenshot" :src="getImage(image)" alt="Image of product" />
           </div>
         </div>
         <!-- <div class="card-row flex-end"> -->
@@ -41,6 +44,9 @@ export default {
   props: { settings: {} },
   data() {
     return {}
+  },
+  mounted() {
+    console.log(this.settings);
   },
   computed: {
     image1() {
@@ -82,6 +88,15 @@ export default {
         )
       }
       return ''
+    },
+  },
+  methods: {
+    getImage(image) {
+      if (!image || !image.value || !image.value.path) {
+        return ''
+      }
+      return process.env.IMAGE_URL +
+          '&w=600&h=500&o=true&m=fitToHeight&src=' + image.value.path
     }
   }
 }

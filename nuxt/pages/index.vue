@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <!-- <MyPart></MyPart> -->
+    <MyPart></MyPart>
 
     <ComponentFlow v-if="components" :components="components"></ComponentFlow>
 
@@ -83,9 +83,6 @@ export default {
     }
   },
   methods: {
-    gotoDreamwedding: function() {
-      this.$router.push({ path: 'products/brollop' })
-    }
   },
   async asyncData({ app, params }) {
     // var components = payload
