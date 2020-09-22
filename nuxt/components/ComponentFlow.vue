@@ -15,6 +15,8 @@
       ></AppImages>
       <Partners v-else-if="component.component === 'partners'"
         :settings="component.settings"></Partners>
+      <MyPart v-else-if="component.component === 'ourWork'"
+        :settings="component.settings"></MyPart>
     </div>
     </div>
 </template>
@@ -26,6 +28,7 @@ import Highlight from '../components/cards/highlight.vue'
 import AboutProduct from '../components/cards/aboutProduct.vue'
 import AppImages from '../components/cards/appImages.vue'
 import Partners from '../components/cards/partners.vue'
+import MyPart from '../components/cards/MyPart.vue'
 
 export default {
   name: 'ComponentFlow',
@@ -35,7 +38,8 @@ export default {
     Highlight,
     AboutProduct,
     AppImages,
-    Partners
+    Partners,
+    MyPart
   },
   props: [
     'components'
@@ -55,7 +59,7 @@ export default {
     // }
   },
   mounted() {
-    console.log(this.components);
+    // console.log(this.components);
   },
   methods: {},
   // async asyncData({ app, params, payload }) {

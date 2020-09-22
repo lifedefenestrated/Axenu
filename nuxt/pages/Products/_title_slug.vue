@@ -88,7 +88,7 @@ export default {
         JSON.stringify({
           filter: { title_slug: params.title_slug },
           sort: { _created: -1 },
-          populate: 1
+          populate: 4
         }),
         {
           headers: { 'Content-Type': 'application/json' }

@@ -47,9 +47,6 @@
         </div>
       </div>
     </div>
-
-    <MyPart></MyPart>
-
     <ComponentFlow v-if="components" :components="components"></ComponentFlow>
 
     <LatestBlogPosts :posts="posts"></LatestBlogPosts>

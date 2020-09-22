@@ -118,7 +118,7 @@ export default {
           JSON.stringify({
             filter: { published: true },
             sort: { _created: -1 },
-            populate: 1
+            populate: 3
           }),
           {
             headers: { 'Content-Type': 'application/json' }
@@ -126,7 +126,7 @@ export default {
         )
         let { data: products } = await axios.post(
           process.env.PRODUCTS_URL,
-          JSON.stringify({}),
+          JSON.stringify({populate: 4}),
           {
             headers: { 'Content-Type': 'application/json' }
           }
