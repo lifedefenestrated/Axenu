@@ -93,7 +93,7 @@
       font-size: 9.5vw
 
   .h4-link, h4
-    font-size: 2.5em
+    font-size: 2em
     font-weight: bold
     color: $accent-color
 
@@ -137,8 +137,17 @@
       flex: 1 1 auto
       height: auto
 
+      &.scroll
+        flex-wrap: unset
+        overflow: scroll
+        padding-bottom: 20px
+
       &.center
         justify-content: center
+        flex: 1
+
+      &.space-around
+        justify-content: space-around
         flex: 1
 
       &.flex-end
@@ -207,6 +216,7 @@
       align-self: center
       min-width: 300px
       margin: 10px
+      justify-content: center
       
       // margin-right: 10px
       // grid-template-columns: repeat(auto-fill, minmax(100%, 100%))
@@ -215,7 +225,8 @@
         min-width: 0px
 
       &.ios-screenshot
-        max-width: 400px
+        max-width: 250px
+        // min-width: unset;
 
       @media (max-width: 400px)
         min-width: 200px !important
