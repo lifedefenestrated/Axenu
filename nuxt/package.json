@@ -25,7 +25,7 @@
     "highlight.js": "^9.15.9",
     "markdown-it": "^9.0.1",
     "markdown-it-vue": "^1.0.9",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
